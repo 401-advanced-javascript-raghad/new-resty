@@ -1,25 +1,41 @@
-.url {
-    text-align: center;
-    input{
-        margin: 30px 15px;
-        width: 300px;
-        height: 20px;
+$backgroundColor: #efefef;
+$radius: 40%;
+
+form {
+        display: inline-block;
+        width: 200px;
+        margin-left: 40%;
+        margin-top: 1%;
+
+  label {
+    display: flex;
+    margin: 1rem 0;
+
+    &.methods {
+      span {
+        cursor: pointer;
+        margin-right: 1rem;
+        padding: .25rem .5rem;
+        background: #ccc;
+
+        &:hover, &.active {
+          background: #fff;
+        }
+      }
     }
+  }
 }
-.method {
-    text-align: center;
-    input{
-        margin: 0px 10px;
-        font-size: 25px;
-    }
-}
-label {
-    padding: 1%;
-}
-.result {
-    height: 265px;
-    width: 92%;
-    border: groove;
-    margin: 2%;
-    padding: 2%;
+
+.results {
+  background: #efefef;
+  border: 1px solid #ccc;
+  flex: 1;
+  margin: 1rem;
+  padding: 1rem;
+  height: 320px;
+
+
+  span {
+    margin: 1rem;
+  }
 }
