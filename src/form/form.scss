@@ -1,0 +1,25 @@
+.url {
+    text-align: center;
+    input{
+        margin: 30px 15px;
+        width: 300px;
+        height: 20px;
+    }
+}
+.method {
+    text-align: center;
+    input{
+        margin: 0px 10px;
+        font-size: 25px;
+    }
+}
+label {
+    padding: 1%;
+}
+.result {
+    height: 265px;
+    width: 92%;
+    border: groove;
+    margin: 2%;
+    padding: 2%;
+}
