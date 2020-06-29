@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "React in development mode uses a node service to create a live website that refreshes as you write code. This is NOT what actually gets deployed when you want your React website to go live. React, remember is an index.html file that uses Javascript to render components in the browser. The node server is only there to aid in your development.",
   "main": "src/index.js",
-  "homepage": "https://401-advanced-javascript-raghad.github.io/resty/",
+  "homepage": "https://angry-banach-915c50.netlify.app/",
   "scripts": {
     "test": "react-scripts test --env=jsdom",
     "start": "react-scripts start",
