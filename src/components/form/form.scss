@@ -4,7 +4,7 @@ $radius: 40%;
 form {
         display: inline-block;
         width: 200px;
-        margin-left: 40%;
+        margin-left: 37%;
         margin-top: 1%;
 
   label {
@@ -38,4 +38,15 @@ form {
   span {
     margin: 1rem;
   }
+}
+.object-key-val {
+  background-color: #8fbca6;
+  min-height: 270px;
+  margin: 3%;
+}
+label.methods {
+  margin-left: 28%;
+}
+.object-content {
+  background-color: #b2d4c3;
 }
