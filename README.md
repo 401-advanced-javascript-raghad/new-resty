@@ -8,6 +8,8 @@ Our application will be an API testing tool that can be run in any browser, allo
 
 - [submission PR branch: base](https://github.com/401-advanced-javascript-raghad/resty/pull/1)
 - [submission PR branch: testing](https://github.com/401-advanced-javascript-raghad/resty/pull/3)
+- [submission PR branch: props-and-state](https://github.com/401-advanced-javascript-raghad/resty/pull/5)
+
 
 
 #### How to initialize/run your application
@@ -15,3 +17,5 @@ Our application will be an API testing tool that can be run in any browser, allo
 
 #### UML
 ![create-react-app](./react-base.png)
+![featch-api](./uml2.png)
+
