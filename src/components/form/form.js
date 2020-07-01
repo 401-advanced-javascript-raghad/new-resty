@@ -7,25 +7,81 @@ class Form extends React.Component {
     this.state = {
       method: '',
       url: '',
+      body:'',
       request: {}
     };
   }
-  handleSubmit = async (e) => {
+  // handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (this.state.url && this.state.method) {
+  //       try {
+  //         const raw = await fetch(`${this.state.url}`);
+  //         const data = await raw.json();
+  //         let results = {
+  //           Headers : raw.headers,
+  //           Response : data
+  //         }
+  //         this.props.handler(results);
+  //       } catch (e) {
+  //         console.log(e);
+  //       }
+  //   }
+  // };
+  handleSubmit = async e => {
     e.preventDefault();
-    if (this.state.url && this.state.method) {
-        try {
-          const raw = await fetch(`${this.state.url}`);
-          const data = await raw.json();
-          let results = {
-            Headers : raw.headers,
-            Response : data
+    if (this.state.url) {
+      switch (this.state.method) {
+        case 'get':
+          try {
+            let raw = await fetch(this.state.url);
+            let data = await raw.json();
+            let head;
+            raw.headers.forEach(value => {
+              head = { 'Content-Type': value }
+            })
+            let results = {
+              Headers: head,
+              Response: data
+            }
+            this.props.handler(results);
+          } catch (e) {
+            console.log(e);
           }
-          this.props.handler(results);
-        } catch (e) {
-          console.log(e);
-        }
+          break;
+        case 'post':
+        case 'put':
+          if (this.state.body) {
+            fetch(this.state.url, {
+              method: `${this.state.method}`,
+              mode: 'cors',
+              headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+              },
+              body: this.state.body
+            })
+              .then(data => data.json()).then(results => {
+                this.props.handler(results);
+              })
+          } else {
+            alert('please Enter the body');
+          }
+          break;
+        case 'delete':
+          fetch(this.state.url, {
+            method: `${this.state.method}`,
+            mode: 'cors',
+            headers: {
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*'
+            },
+          })
+            .then(() => {
+              this.props.handler({results:'Deleted ....'});
+            })
+      }
     }
-  };
+  }
 
   handleChangeUrl = (e) => {
     const url = e.target.value;
